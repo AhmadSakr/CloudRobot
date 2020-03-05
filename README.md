@@ -19,6 +19,6 @@ Robot body including motors and wheels|4500
 2 H-bridge|700
 Raspberry pi 3 model B|1350
 5MP camera|400
-3.3v to 5vlevel converter|15
+3.3v to 5v level converter|15
 Total cost|6945
 ## Conclusion
