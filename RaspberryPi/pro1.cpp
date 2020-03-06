@@ -1,24 +1,27 @@
 #include <iostream>
-#include <wiringPi.h>
-#include <csignal>
-#include <softPwm.h>
+#include "motor.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-	wiringPiSetupGpio();
-	pinMode(21,OUTPUT);
-	softPwmCreate(21, 0, 100);
+	Motor motor(20,21,13,19,0,100);
 	
-	while(true)
+	while (true)
 	{
-		softPwmWrite(21, 0);
-		delay(1000);
-		softPwmWrite(21, 50);
-		delay(1000);
-		softPwmWrite(21, 100);
-		delay(1000);
+		motor.forward();
+		cout << "f" <<endl;
+		delay(3000);
+		motor.backward();
+		cout << "b" << endl;
+		delay(3000);
+		motor.turnLeft();
+		cout << "l" << endl;
+		delay(3000);
+		motor.turnRight();
+		cout << "r" << endl;
+		delay(3000);
+		
 	}
 	return 0;
 }
