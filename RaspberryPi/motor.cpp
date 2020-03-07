@@ -79,3 +79,21 @@ void Motor::leftSideBackward()
 	softPwmWrite(pwmLeftPin1, pwmMaxVal);
 	softPwmWrite(pwmLeftPin2, pwmMinVal);
 }
+
+void Motor::leftSideStop()
+{
+	softPwmWrite(pwmLeftPin1, pwmMinVal);
+	softPwmWrite(pwmLeftPin2, pwmMinVal);
+}
+
+void Motor::rightSideStop()
+{
+	softPwmWrite(pwmRightPin1, pwmMinVal);
+	softPwmWrite(pwmRightPin2, pwmMinVal);
+}
+
+void Motor::stop()
+{
+	rightSideStop();
+	leftSideStop();
+}
