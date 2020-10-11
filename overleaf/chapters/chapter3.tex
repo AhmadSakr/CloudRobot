@@ -1,20 +1,10 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{subcaption}
-
-\title{Chapter 3: Code Explanation }
-\author{ }
-
-\begin{document}
-
-\maketitle
 \large
-\section{Introduction}
+\section{Code Explanation}
+
 In this chapter, we will explain the implemented code by which the project is done. In this project, we classified the coding files into two section … the first one is the one that cares about the HTTP server and how it interact with the user and with the motor, the second section that cares about the programming of the RaspberryPi and the motor.
 
 
-\section{HTTP Server}
+\subsection{HTTP Server}
 
 In this section talking about the programming code by “JAVA” Programming Language of the HTTP Server. This Section contains one file which is the named file called “HTTP-Server”. But Before Explain the code … we must know the importance of the server in our project. It’s simply to send to the RaspberryPi (C++) Code a request with direction of the movement the user wants to move the body. If the user gives an order, the server replies with that order. It makes that cycle 10 times per one Second. It means that the user has the chance to give an order ten times in every second by any movement as Left, Right, Forward, Backward or stop from movement; so the (C++) code send a request for the server to give it any order and the reply of the java code includes the order of the movement.
 
@@ -105,11 +95,11 @@ Finally, here when C++ code request an order … just get the order from the tex
 
 \newpage
 
-\section{RaspberryPi}
+\subsection{RaspberryPi}
 
 In this section talking about the programming code by “C++” Programming Language of the RaspberryPi module and the motor. This Section contains three files which are the Motor header file, the Motor Function description file and finally and absolutely the Main project file. But Before Explain the code … we must shout out that we used a method in code called Pulse-width modulation (PWM) so we must have an small brief on the PWM and its principles in order to understand the way of design is made and has been coded by.
 
-\subsection{Pulse-width modulation (PWM)}
+\subsubsection{Pulse-width modulation (PWM)}
 
 Pulse-width modulation (PWM) is a strategy to reduce an electrical signal's average power by essentially cutting it into discrete sections. The average voltage (and current) value fed to the load is managed by switching the switch among both supply and load on and off at a quick rate. Compared to the off periods the longer the switch is on, the higher the total power supplied to the fee. Along with maximum power point tracking (MPPT), it is one of the primary ways of reducing solar panel output to that which a battery can use. PWM is especially suitable for running inertial loads such as motors which are not as easily influenced by this discrete switching because they have inertia for slow reaction. The frequency of PWM switching must be high enough not to affect the load, which is to say the resulting waveform perceived by the load must be as smooth as possible.
 
@@ -125,7 +115,7 @@ Pulse-width modulation (PWM) is a strategy to reduce an electrical signal's aver
 Depending on load and application, the rate (or frequency) at which the power supply has to switch can vary considerably. The main advantage of PWM is that it has very low power loss in the switching devices. There is virtually no current when a switch is off, and when it is on and power is transferred to the charge, there is almost no drop in voltage across the switch. Consequently, power loss, being the product of voltage and current, is close to zero in both cases. PWM also works well with digital controls which can easily set the required duty cycle because of their on / off nature.
 
 \newpage
-\subsection{Motor header code}
+\subsubsection{Motor header code}
 
 This code file named “motor.h” and it is responsible for the declaration of the function used in the main code. In the first, we made class by ‘Motor’ name that we can take object from it anytime we needed to. Any Class consists of public and private sections … For the public one, we declare function for motion which are forward, backward, turn Right, turn Left and stop. All those function doesn’t take or return any attribute. At last, in the public section, we also declare a function called ‘motor’ that takes six attributes which are pwmRightPin1, pwmRightPin2 those are the number of the Pulse Width Modulation Pin for the right side of the motor, pwmLeftPin1, pwmLeftPin2 those are the number of the Pulse Width Modulation Pin for the left side of the motor, pwmMinVal, pwmMaxVal those are the number of the Pulse Width Modulation value of the motor … all those attributes are from integer data type.
 \newline
@@ -148,7 +138,7 @@ After Public section, it is the turn for the private one … we declare function
 
 \newpage
 
-\subsection{Definition of Motor Function Code}
+\subsubsection{Definition of Motor Function Code}
 
 This code file named “motor.cpp” and it is responsible for the Definition of the function used in the main code and that was declared in the header file. In the first, we include the header file which is called ‘motor.h’ that has the declaration of the functions needed to be defined. We make an object from class called “motor” … in this object “Motor” Function we assigned the variables of the PWM pins and values which we have initialized before including pwmRightPin1, pwmRightPin2, pwmLeftPin1, pwmLeftPin2, pwmMinVal and pwmMaxVal. We assign these variables with the attributes taken by the function including pwmRightPin1, pwmRightPin2, pwmLeftPin1, pwmLeftPin2, pwmMinVal, pwmMaxVal assigning them in the variables in the same order. After assigning the pins and PWM values … we call the initialization function that is called ‘init’. That function we will explain later in this code file.
 
@@ -269,7 +259,7 @@ Finally, we begin with the stop movement of the whole body by stopping the left 
 \end{figure}
 
 \newpage
-\subsection{The Main Project Code}
+\subsubsection{The Main Project Code}
 
 This code file named “pro1.cpp” and it is responsible for the main program. In the first, we include the header file which is called ‘motor.h’ that has the declaration of the functions needed to be defined and some other include files we in need for them. In the main block, we create an object from “motor” Class with assigning in it the pin numbers and values required in motor function. We assigned the pins number (20, 21, 13 and 19) as motor pins, assigning ‘0’ for minimum value of PWM value and ‘100’ for maximum value of PWM value. We also declared some variable that will be used including variable named response for the HTTP response, variable named body response for the receiving response status code and, variable named body response for the receiving response status code.
 
@@ -301,5 +291,3 @@ Here, we assign what we get of response status code and check whether the respon
     \caption{Main Project code: Condition block}
     \label{fig:my_label}
 \end{figure}
-
-\end{document}
