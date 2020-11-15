@@ -1,0 +1,141 @@
+\documentclass[12pt, document]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+\begin{center}
+\chapter{\textbf{\Huge \textit{LaTeX}}}
+\end{center}
+\vspace{1cm}
+
+\begin{center}
+\chapter{\textbf{Introduction}}
+\end{center}
+\vspace{0.5cm}
+
+\hspace{1cm} LATEX (pronounced lay-tek) is a document preparation system for producing
+professional-looking documents, it is not a word processor. It is particularly
+suited to producing long, structured documents, and is very good at typesetting equations. It is available as free software for most operating systems.
+LATEX is based on TEX, a typesetting system designed by Donald Knuth in
+1978 for high quality digital typesetting. TEX is a low-level language that
+computers can work with, but most people would find difficult to use; so
+LATEX has been developed to make it easier. The current version of LATEX is
+LATEX2e.
+If you are used to producing documents with Microsoft Word, you will find
+that LATEX is a very different style of working. Microsoft Word is ‘What You
+See Is What You Get’ (WYSIWYG), this means that you see how the final
+document will look as you are typing. When working in this way you will
+probably make changes to the document’s appearance (such as line spacing,
+headings, page breaks) as you type. With LATEX you do not see how the final
+document will look while you are typing it — this allows you to concentrate
+on the content rather than appearance.
+A LATEX document is a plain text file with a .tex file extension. It can be typed
+in a simple text editor such as Notepad, but most people find it is easier to
+use a dedicated LATEX editor. As you type you mark the document structure
+(title, chapters, subheadings, lists etc.) with tags. When the document
+is finished you compile it — this means converting it into another format.
+Several different output formats are available, but probably the most useful
+1
+is Portable Document Format (PDF), which appears as it will be printed and
+can be transferred easily between computers.
+\thispagestyle{empty}
+
+\pagebreak
+
+\begin{center}
+\chapter{\textbf{How does LaTeX work}}
+\end{center}
+
+\hspace{1cm} In order to use LaTeX you generate a file containing both the text that you wish to print and instructions to tell LaTeX how you want it to appear. You will normally create this file using your system's text editor. You can give the file any name you like, but it should end `` .TEX'' to identify the file's contents. You then get LaTeX to process the file, and it creates a new file of typesetting commands; this has the same name as your file but the `` .TEX'' ending is replaced by `` .DVI''. This stands for ` De vice Independent' and, as the name implies, this file can be used to create output on a range of printing devices. Your local guide will go into more detail.
+
+Rather than encourage you to dictate exactly how your document should be laid out, LaTeX instructions allow you describe its logical structure. For example, you can think of a quotation embedded within your text as an element of this logical structure: you would normally expect a quotation to be displayed in a recognisable style to set it off from the rest of the text. A human typesetter would recognise the quotation and handle it accordingly, but since LaTeX is only a computer program it requires your help. There are therefore LaTeX commands that allow you to identify quotations and as a result allow LaTeX to typeset them correctly. \vspace{0.7cm}
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{InputExample.png}
+  \caption{LATEX Input}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{OutputExapmle.png}
+  \caption{LATEX Output}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+
+Fundamental to LaTeX is the idea of a document style that determines exactly how a document will be formatted. LaTeX provides standard document styles that describe how standard logical structures (such as quotations) should be formatted. You may have to supplement these styles by specifying the formatting of logical structures peculiar to your document, such as mathematical formulae. You can also modify the standard document styles or even create an entirely new one, though you should know the basic principles of typographical design before creating a radically new style.
+\thispagestyle{empty}
+
+There are a number of good reasons for concentrating on the logical structure rather than on the appearance of a document. It prevents you from making elementary typographical errors in the mistaken idea that they improve the aesthetics of a document---you should remember that the primary function of document design is to make documents easier to read, not prettier. A visual system makes it easier to create visual effects rather than a coherent structure; logical design encourages you to concentrate on your writing and makes it harder to use formatting as a substitute for good writing.
+\vspace{3cm}
+
+\begin{center}
+\chapter{\textbf{LaTeX unique features}}
+\end{center}
+\vspace{1cm}
+
+\chapter{\textbf{Write first; format later: }}
+In LaTeX, the writing is properly segmented from formatting. The beauty of LaTeX is that it allows you to define styles for individual elements. These elements will have a consistent styling across the document; you need not format it every time you add an element. Hence, you can write in peace and do all the formatting just once.
+
+\chapter{\textbf{Flexibility:}}
+Researchers say that you can literally do ‘anything’ on LaTeX. Since the launch of LaTeX, a profuse number of packages and macros have come into being which helps solve complex problems in LaTeX; most of which can be found on CTAN (aka Comprehensive Tex Archive Network). Besides that, it is easy to search expressions like $x^5$ or "footnote" as compared to word processors. You can also search the file using regular expressions. Writing macros for better semantic representation is just a one-liner.
+\thispagestyle{empty}
+
+\chapter{\textbf{Quality:}}
+It can’t be denied that the quality of output produced by LaTeX is far superior to that produced by Word or any other word processing software. This is especially true with papers which have a high density of mathematical content, graphs, etc. Besides that, it also has much better kerning, hyphenation and justification procedures. It uses an innovatory measurement called a scaled point to layout text in a sophisticated and fine-grained manner.
+
+\chapter{\textbf{Platform Independent:}}
+LaTeX scripts are platform independent. Why? Because you get it in a plain text (.txt) file. A text file is probably one of the most versatile forms of filetypes to exist. You can literally open and edit a text file in any tool. Generally speaking, all known editors like Notepad, Notepad ++, and even MS Word can open text files. This is a prominent advantage over MS Word as it uses OOXML format which is proprietary. This results in distortion in formatting when you copy or import a Word document into any other word processors.
+
+\chapter{\textbf{Stability:}}
+Researchers who use MS Word are often disappointed by the fact that word processors like MS Word are prone to crashes. On the contrary, LaTeX doesn’t really have bugs. It is built by clever coders who kept in mind the drawbacks of word processors and attempted to fix them. Even if some bugs exist, you are never in danger of losing your original source text (What a relief!). In Word, almost any tool which is integrated with it might be capable of damaging your main file. However, in LaTeX that’s not the case. Most of the packages are built on LaTeX itself.
+
+\chapter{\textbf{Scalability:}}
+LaTeX is ‘the’ way to go when it comes to large documents like thesis and books. LaTeX allows you to split up large documents into smaller chunks and let LaTeX combine them together. For instance, you writing individual files for each chapter in a book and later combining them to form one complete book. It is also capable of creating tables of content, indexes, and bibliographies easily, even on multi-file projects.
+
+\chapter{\textbf{Cost:}}
+The original version of MS Word costs around 7 dollars/month. OpenOffice is free but it’s literally a lot worse than MS Word. LaTeX is available for FREE. It is all open source along with its packages (which you can access through CTAN).
+\thispagestyle{empty}
+
+\chapter{\textbf{Publisher Friendly:}}
+Nowadays, journals are explicitly asking researchers to format their paper in LaTeX. If that’s not the case then at least they have an option for researchers like you to submit in LaTeX. Top journals and publishers like Nature, Elsevier, SAGE, etc. have this option. They prefer submissions in LaTeX as it’s apparently easier to edit it before final publishing.
+
+\chapter{\textbf{Auto-update Bibliography:}}
+A key reason why researchers use LaTeX. It can generate the bibliography of a manuscript automatically. The most common way you can opt to write a bibliography is by using a .bib file. This type of file provides you with a list of references that can be used within your document. Now, you can use this .bib file in your .tex file using the "cite{}" command; your bibliography is generated within a matter of seconds.
+\thispagestyle{empty}
+
+\pagebreak
+
+
+
+Academic researchers in the fields of mathematics, physics, computer science, and engineering are drawn to LaTeX because of its exceptional typesetting capabilities, especially with regards to the use of mathematical equations and scientific figures. LaTeX can create scientific documents that look professional and accurately reflect the precise equations and other graphics necessary to express the researcher’s work.
+
+\textbf{Some other advantages of using this to prepare a research paper are:}
+
+\begin{itemize}
+
+\item It is used extensively in the academic/scientific community
+\item It can be viewed/edited with any text editor
+\item Its formatting is consistent and automatically employed once set
+\item The software is free
+\vspace{1cm}
+
+For academic researchers whose work is not laden with equations or figures, but desire the polished look of a LaTeX document, it is possible to convert word-processed documents into LaTeX files. Technical information regarding the specific functionality of LaTeX and the directions for use can be found in various online and offline resources.
+
+\end{itemize}
+\thispagestyle{empty}
+
+\end{document}
